@@ -12,7 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('amenities', function (Blueprint $table) {
-            $table->id();
+            $table->id('amenity_id');
+            $table->string('amenity_name');
+            $table->text('description');
+            $table->decimal('price_per_use', 10, 2);
             $table->timestamps();
         });
     }

@@ -17,7 +17,7 @@ return new class extends Migration
             $table->integer("accommodation_id")->foreign()->references("id")->on("accommodations");
             $table->dateTime("check_in_date");
             $table->dateTime("check_out_date");
-            $table->float("total_price", [10, 2]);
+            $table->decimal("total_price", 10, 2);
             $table->enum("status", ["pending", "confirmed", "cancelled"])->default("pending");
             $table->timestamps();
         });
